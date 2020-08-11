@@ -30,4 +30,4 @@ Tests for controller files are [here](/src/test/java/com/example/co/controller/P
 Tests for service files are [here](/src/test/java/com/example/co/services/ProjectServiceTest.java)
 
 ### Verification
-You can find all verification details in [this]() video
+You can find all verification details in [this](https://drive.google.com/file/d/172GGh9RcLbqCyED4Un46fO0bgO6hTkQF/view?usp=sharing) video
