@@ -22,7 +22,7 @@ This is simple REST API project.Base template was picked from [this](https://dri
     ```mvn clean```
     
 ### Functionality
-This project complemetes the **POST** and **PATCH** apis required for the the demo.
+This project completes the **POST** and **PATCH** apis required for the the demo.
 
 ### Verification
 You can find all verification details in [this]() video

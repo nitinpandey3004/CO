@@ -1,6 +1,5 @@
 package com.example.co.controller;
 
-import com.example.co.exceptions.ConflictException;
 import com.example.co.model.Project;
 import com.example.co.services.ProjectService;
 import io.swagger.annotations.Api;
@@ -10,11 +9,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
-import java.util.HashMap;
 import java.util.Map;
+
+/**
+ * This is controller file for Project Rest Apis
+ * It contains 3 main Methods:
+ * 	1. Get
+ * 	2. POST
+ * 	3. PATCH
+ */
 
 @RestController
 @RequestMapping(ProjectRestController.ENDPOINT)
