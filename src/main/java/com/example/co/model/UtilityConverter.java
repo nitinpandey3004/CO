@@ -28,7 +28,7 @@ public class UtilityConverter {
         try {
             pd = new PropertyDescriptor(fieldName, object.getClass());
             if(fieldName.equals("sdlcSystem")) {
-                LinkedHashMap sdlcMap = (LinkedHashMap)value;
+                Map sdlcMap = (Map)value;
                 SdlcSystem sdlcSystem = sdlcSystemRepository.findById(new Long((int)sdlcMap.get("id"))).orElseThrow(() -> new NotFoundException(SdlcSystem.class, new Long((int)sdlcMap.get("id"))));
                 pd.getWriteMethod().invoke(object, sdlcSystem);
             } else {

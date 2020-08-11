@@ -2,34 +2,39 @@ package com.example.co.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.hamcrest.core.IsNull;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-
+import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
- * This file is for Unit testing of ProjectRestController.java
- * We have used Mockmvc to mock API calls
+ * This file tests ProjectRestController.java Integration
+ * For Integration Testing we haven't used mocked service
+ * Instead we have used standalone projectRestController directly
  */
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
-@AutoConfigureMockMvc
-@AutoConfigureTestDatabase
-public class ProjectRestControllerUnitTest {
+@RunWith(SpringRunner.class)
+public class ProjectRestControllerTest {
+
+    private MockMvc mvc;
 
     @Autowired
-    private MockMvc mvc;
+    ProjectRestController projectRestController;
+
+    @Before
+    public void setup() {
+        this.mvc = standaloneSetup(this.projectRestController).build();
+    }
 
     //tests related to get
 

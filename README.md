@@ -25,9 +25,9 @@ This is simple REST API project.Base template was picked from [this](https://dri
 This project completes the **POST** and **PATCH** apis required for the the demo.
 
 ### Tests Details
-Unit tests for controller files are [here](/src/test/java/com/example/co/controller/ProjectRestControllerUnitTest.java)
+Tests for controller files are [here](/src/test/java/com/example/co/controller/ProjectRestControllerTest.java)
 
-Integration tests for controller files are [here](/src/test/java/com/example/co/controller/ProjectRestControllerIntegrationTest.java)
+Tests for service files are [here](/src/test/java/com/example/co/services/ProjectServiceTest.java)
 
 ### Verification
 You can find all verification details in [this]() video
