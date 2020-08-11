@@ -34,14 +34,14 @@ public class UtilityConverter {
             } else {
                 pd.getWriteMethod().invoke(object, value);
             }
+        } catch (ClassCastException e) {
+            throw new BadRequestException(e);
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (IntrospectionException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
             e.printStackTrace();
-        } catch (ClassCastException e) {
-            throw new BadRequestException(e);
         }
     }
 
