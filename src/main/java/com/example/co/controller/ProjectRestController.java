@@ -20,7 +20,6 @@ import java.util.Map;
  * 	2. POST
  * 	3. PATCH
  */
-
 @RestController
 @RequestMapping(ProjectRestController.ENDPOINT)
 @Api(produces = MediaType.APPLICATION_JSON_VALUE, tags = "Project")
@@ -37,6 +36,11 @@ public class ProjectRestController {
 	@Autowired
 	private ProjectService projectService;
 
+	/**
+	 * To get the details of the project with given projectId
+	 * @param projectId: Identifier of the project
+	 * @return Project
+	 */
 	@ApiOperation("Get a Project")
 	@RequestMapping(value=GET_PROJECT_URI, method=RequestMethod.GET)
 	@ResponseBody
@@ -47,6 +51,12 @@ public class ProjectRestController {
 		return projectService.getProject(projectId);
 	}
 
+	/**
+	 * Create a new project with provided details
+	 * Expects valid project object
+	 * @param project: Object with project details
+	 * @return created project
+	 */
 	@ApiOperation("Create a Project")
 	@RequestMapping(value=POST_CREATE_PROJECT_URI, method=RequestMethod.POST)
 	@ResponseBody
@@ -55,6 +65,12 @@ public class ProjectRestController {
 		return	projectService.createProject(project);
 	}
 
+	/**
+	 * This method is used for updating the project
+	 * @param projectId: Identifier of the project to be updated
+	 * @param patchObject: Object with fields to be updated
+	 * @return : project
+	 */
 	@ApiOperation("Update a Project")
 	@RequestMapping(value = UPDATE_PROJECT_URI, method = RequestMethod.PATCH)
 	@ResponseBody
